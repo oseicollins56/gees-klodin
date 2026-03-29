@@ -434,17 +434,18 @@
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: auto;
-      gap: 1rem;
-      max-width: 1200px;
+      grid-auto-rows: 220px;
+      gap: 0.7rem;
+      max-width: 1100px;
       margin: 0 auto;
     }
 
     .gallery-item {
       overflow: hidden;
-      border-radius: 12px;
+      border-radius: 10px;
       position: relative;
       cursor: pointer;
+      background: var(--green-light);
     }
 
     .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
@@ -453,8 +454,8 @@
     .gallery-item img {
       width: 100%;
       height: 100%;
-      min-height: 220px;
-      object-fit: cover;
+      object-fit: contain;
+      object-position: center;
       display: block;
       transition: transform 0.5s ease;
     }
@@ -916,8 +917,9 @@
       .service-card { padding: 1.8rem 1.4rem; }
 
       /* Gallery */
-      .gallery-grid { grid-template-columns: 1fr 1fr; gap: 0.6rem; }
-      .gallery-item img { min-height: 160px; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 160px; gap: 0.5rem; }
+      .gallery-item:nth-child(1) { grid-column: span 1; grid-row: span 1; }
+      .gallery-item:nth-child(5) { grid-column: span 1; }
 
       /* Apprenticeship cards */
       .apprenticeship-cards { grid-template-columns: 1fr; }
